@@ -381,7 +381,7 @@ void updateNote(int current) {
         }
     }
     if ( ribbonVolume[current] == 0 ) {                                                     // if volume = 0, send all notes off.
-        noteRunning[current] = 0;
+        noteRunning[current] = 0;                                                           // and turn off noteRunning
         switch (INTERFACE) {
             case 'S' :  // Serial Interface (debugging)
                 Serial.println("All notes off.");
