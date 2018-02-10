@@ -1,7 +1,7 @@
 
 /* Arduino Ribbon(s) Controller
  * 
- * 20180210 Dan Easley.  Public Domain.
+ * 20180210 Dan Easley.
  * 
  * Linear Soft Pot reading code based on examples from "Arduino Music and Audio Projects" by Mike Cook
  * Smoothing code from Arduino tutorials
