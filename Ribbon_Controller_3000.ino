@@ -337,8 +337,12 @@ void updateNote(int current) {
     if (oldNoteNumber != ribbonNoteNumber[current]) {                                       // if note changed (can only happen in Note or Lookup modes)
         switch (INTERFACE) {
             case 'S' :  // Serial Interface (debugging)
-                Serial.print("New Note Number: (Number, Channel)");
-                Serial.print(ribbonNoteNumber[current], ribbonChannel[current]);
+                Serial.print("New Ribbon Reading: (Number) ");
+                Serial.print(ribbonReadingEstablished[current]);
+                if (PLAYMODE != 'P') {
+                    Serial.print("New Note Number: (Number, Channel) ");
+                    Serial.print(ribbonNoteNumber[current], ribbonChannel[current]);
+                }
                 break;
             case 'O' :  // OSC Interface (not yet implemented)
                 break;
@@ -353,7 +357,7 @@ void updateNote(int current) {
     if (oldPitchBend != ribbonPitchBend[current]) {                                         // send pitchbend if changed...
         switch (INTERFACE) {
             case 'S' :  // Serial Interface (debugging)
-                Serial.print("Pitch bend: (Bend, Channel)");
+                Serial.print("Pitch bend: (Bend, Channel) ");
                 Serial.print(ribbonPitchBend[current], ribbonChannel[current]);
                 break;
             case 'O' :  // OSC Interface (not yet implemented)
@@ -368,7 +372,7 @@ void updateNote(int current) {
     if (oldVolume != ribbonVolume[current]) {                                               // send volume if changed
         switch (INTERFACE) {
             case 'S' :  // Serial Interface (debugging)
-                Serial.print("  Volume: (Volume, Channel)");
+                Serial.print("  Volume: (Volume, Channel) ");
                 Serial.println(ribbonVolume[current], ribbonChannel[current]);
                 break;
             case 'O' :  // OSC Interface (not yet implemented)
