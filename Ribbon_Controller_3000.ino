@@ -208,7 +208,7 @@ void loop()
 {
     // Iterate through pitch ribbons, starting, stopping, or changing notes as instructed.
     
-    for (int current = 0; current < (NUMBEROFRIBBONS - 1); current++) {
+    for (int current = 0; current < (NUMBEROFRIBBONS); current++) {
         readRibbon(current);
         if (!noteRunning[current]) {        // If note is not on...
             if (!noteStart[current]) {      //             ... and doesn't need to be...
