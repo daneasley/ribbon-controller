@@ -175,7 +175,7 @@ void setup()
 
     // Setup Variables
     
-    for ( int current = 0; current < (NUMBEROFRIBBONS - 1); current++ ) 
+    for ( int current = 0; current < (NUMBEROFRIBBONS); current++ ) 
     {
         noteRunning[current] = 0;
         noteStart[current] = 0;
